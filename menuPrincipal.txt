@@ -1,0 +1,11 @@
+=======================================================
+|            MENU PRINCIPAL DO SERVIDOR               |
+=======================================================
+|   Escolha o que voce deseja:                        |
+-------------------------------------------------------
+|   1 - Calculo de raizes do Segundo Grau             |
+|   2 - Calculo do IMC                                |
+|   3 - Classificar de um IPV4                        |
+|   4 - Chat de conversa com o Servidor               |
+|   0 - Sair                                          |
+=======================================================

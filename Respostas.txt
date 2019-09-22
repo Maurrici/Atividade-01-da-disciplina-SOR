@@ -1,0 +1,5 @@
+Este IP e valido
+ Este IP esta na classe C
+ Este IP nao e um endereco de loopback
+ O IP e local
+ 
