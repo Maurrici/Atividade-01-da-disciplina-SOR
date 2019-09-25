@@ -1,5 +1,1 @@
-Este IP e valido
- Este IP esta na classe C
- Este IP nao e um endereco de loopback
- O IP e local
- 
+Seu IMC: 31.249999999999993 Obesidade grau 1 

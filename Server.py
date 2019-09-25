@@ -51,35 +51,38 @@ def ClassificarIPV4(ipv4):
     classeB = ipaddress.IPv4Network(("172.16.0.0", "255.240.0.0"))  # or IPv4Network("172.16.0.0\12")
     classeC = ipaddress.IPv4Network(("192.168.0.0", "255.255.0.0"))  # or IPv4Network("192.168.0.0\16")
 
+    ip = ip.replace('.', ' ')
+    ip = ip.split()
+    for item in ip:
+        if int(item) > 255:
+            resul.append("Este IP é inválido")
+            return resul
+    ip = '.'.join(ip)
     ip = ipaddress.IPv4Address(ip)
-    if ip is ipaddress.AddressValueError(ValueError):
-        resul.append("Este IP é invalido\n")
-        return resul
-    else:
-        resul.append("Este IP e valido\n")
+    resul.append(" Este IP é válido\n")
 
     if ip in classeA:
-        resul.append("Este IP esta na classe A\n")
+        resul.append("Este IP está na classe A\n")
     elif ip in classeB:
-        resul.append("Este IP esta na classe B\n")
+        resul.append("Este IP está na classe B\n")
     elif ip in classeC:
-        resul.append("Este IP esta na classe C\n")
+        resul.append("Este IP está na classe C\n")
     else:
-        resul.append("Este IP esta IP esta na classe E ou D, que não possui uma divisao entre a network e o ID\n")
+        resul.append("Este IP está na classe E ou D ou é uma classe especial\n")
 
     if ip.is_loopback is True:
-        resul.append("Este IP e um endereco de loopback\n")
+        resul.append("Este IP é um endereço de loopback\n")
     else:
-        resul.append("Este IP nao e um endereco de loopback\n")
+        resul.append("Este IP não é um endereço de loopback\n")
 
     hostname = socket.gethostname()
     ip_host = socket.gethostbyname(hostname)
     ip_host = ipaddress.IPv4Address(ip_host)
 
     if ip == ip_host:
-        resul.append("O IP e local\n")
+        resul.append("O IP é local\n")
     else:
-        resul.append("O IP nao e local\n")
+        resul.append("O IP não é local\n")
 
     return resul
 
